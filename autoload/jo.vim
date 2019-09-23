@@ -30,6 +30,9 @@ function! jo#do() abort
 		let obj[k] = s:parse_value(v)
 	endfor
 
+	" to save undo
+	<C-o>i
+
 	call setline(getcurpos()[1],json_encode(obj))
 endfunction
 
